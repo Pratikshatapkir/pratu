@@ -1,1 +1,1 @@
-# pratu
+# java daily practice
