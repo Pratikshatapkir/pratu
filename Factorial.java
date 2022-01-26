@@ -1,20 +1,18 @@
 package com.company;
-import java.util.*;
-public class Factorial {
-    public static void printFactorial(int n){
-        int factorial=1;
-        for(int i=n;i>=1;i--) {
-            factorial = factorial * i;
-        }
-            System.out.println(factorial);
-            return;
-        }
 
+public class Factorial {
+    public static int calcFactorial(int n){
+        if(n==1 || n==0){
+            return 1;
+        }
+        int fact_nm1=calcFactorial(n-1);
+        int fact_n=n * fact_nm1;
+        return fact_n;
+    }
     public static void main(String[] args) {
-        Scanner sc=new Scanner(System.in);
-        int n=sc.nextInt();
-       // System.out.println(factorial);3
-        printFactorial(n);
+        int n=5;
+        int ans=calcFactorial(n);
+        System.out.println(ans);
 
     }
 }
